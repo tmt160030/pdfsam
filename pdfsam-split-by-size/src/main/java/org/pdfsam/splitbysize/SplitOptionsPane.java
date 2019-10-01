@@ -80,11 +80,11 @@ class SplitOptionsPane extends HBox
     }
 
     @Override
-    public void saveStateTo(Map<String, String> data) {
+    public void saveStateTo(Map<String, String> data) { //Method involving actually splitting 
         data.put("size", defaultString(field.getText()));
         group.getToggles().stream().map(t -> {
             return (SizeUnitRadio) t;
-        }).forEach(s -> s.saveStateTo(data));
+        }).forEach(s -> ((SizeUnitRadio)s).saveStateTo(data));
     }
 
     @Override
